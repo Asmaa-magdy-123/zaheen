@@ -15,13 +15,20 @@
 .main{
     background-image: url("Rectangle\ 39874.png");
     background-size: 100% 100%;
-}
-.section-two{
-    background-image: url("Rectangle2.png");
-}
-.contentTwo{
-    background-image: url("wallpaper.png");
-    background-size: 70% 100%;
     background-repeat: no-repeat;
-    background-position: center;
 }
+.section-two {
+    background-image: url("Rectangle2.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+  }
+  
+  .contentTwo {
+    background-image: url("wallpaper.png");
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto; 
+  }
+  

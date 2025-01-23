@@ -13,20 +13,26 @@
     <title>ذهين</title>
   </head>
   <body>
-    <div class="main w-full min-h-[100vh]">
+    <div class="main w-full min-h-[30vh] text-[10px] md:text-lg">
       <div class="flex flex-col items-center w-full h-full">
         <nav
           class="flex justify-between p-3 items-center bg-white rounded-b-3xl w-[95%]"
         >
           <img src="logo.png" class="w-[50px]" alt="Logo" />
-          <ul class="flex gap-x-4">
+          <button
+            id="menuToggle"
+            class="lg:hidden text-mainColor text-2xl focus:outline-none"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="hidden lg:flex gap-x-4">
             <li><a href="#" class="text-mainColor">الرئيسيه</a></li>
             <li><a href="#">الباقات</a></li>
             <li><a href="#">المواد</a></li>
             <li><a href="#">الأسئله الشائعه</a></li>
             <li><a href="#">من نحن</a></li>
           </ul>
-          <div class="icons flex gap-x-3 items-center">
+          <div class="icons flex gap-x-3 items-center hidden lg:flex">
             <button class="bg-mainColor rounded-md py-1 px-4 text-white">
               انضم كمعلم
             </button>
@@ -37,39 +43,65 @@
         </nav>
 
         <div
-          class="mainContent w-[95%] h-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-center"
+          id="offcanvasMenu"
+          class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg transform translate-x-full transition-transform lg:hidden z-50"
+        >
+          <button
+            id="menuClose"
+            class="absolute top-3 left-3 text-xl text-mainColor focus:outline-none"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <ul class="flex flex-col mt-16 gap-y-4 px-6">
+            <li><a href="#" class="text-mainColor">الرئيسيه</a></li>
+            <li><a href="#">الباقات</a></li>
+            <li><a href="#">المواد</a></li>
+            <li><a href="#">الأسئله الشائعه</a></li>
+            <li><a href="#">من نحن</a></li>
+          </ul>
+        </div>
+
+        <div
+          class="mainContent w-[95%] min-h-[30vh] grid grid-cols-2 lg:grid-cols-2 gap-4 items-center text-[10px] md:text-lg"
         >
           <div class="content flex flex-col p-3">
-            <h1 class="text-[5vw] font-bold">ذهين</h1>
-            <img class="w-[120px]" src="line-2.png" alt="Decorative line" />
+            <h1 class="text-[5vw] font-bold lg:mb-5">ذهين</h1>
+            <img
+              class="w-[10vw] object-cover md:mt-5"
+              src="line-2.png"
+              alt="Decorative line"
+            />
             <h1 class="font-bold leading-normal text-[5vw]">
               وجهتك لتحقيق
-              <div class="relative">
-                <img
-                  src="teacher.png"
-                  class="absolute right-[70%] hidden lg:block object-cover"
-                  alt="Teacher icon"
-                />
-                <img
-                  src="Arrow.png"
-                  class="absolute right-[42%] hidden lg:block object-cover"
-                  alt="Arrow icon"
-                />
-                <h1 class="inline-block text-[5vw] font-bold">
-                  أهدافك <span class="text-mainColor font-bold">الجامعية</span>
-                </h1>
-                <p class="text-[#8C8C8C] text-[1.3vw]">
-                  خطوه واحده تفصلك عن التفوق
-                </p>
-                <button
-                  class="bg-mainColor text-white py-2 px-14 rounded-md self-start text-base"
-                >
-                  ابدأ رحلتك الأن
-                </button>
+              <div class="flex max-h-[30vh]">
+                <div class="flex flex-col gap-y-3">
+                  <h1 class="text-[5vw] font-bold">أهدافك</h1>
+                  <p class="text-[#8C8C8C] text-[1.3vw]">
+                    خطوه واحده تفصلك عن التفوق
+                  </p>
+                  <button
+                    class="bg-mainColor text-white py-1 px-2 rounded-md self-start text-[8px] sm:text-[15px] md:text-lg md:px-5 lg:px-8 xl:px-14"
+                  >
+                    ابدأ رحلتك الأن
+                  </button>
+                </div>
+                <div class="relative">
+                  <img
+                    src="teacher.png"
+                    class="absolute left-[-10%] w-[6vw]"
+                    alt="Teacher icon"
+                  />
+                  <span class="text-mainColor font-bold">الجامعية</span>
+                  <img
+                    src="Arrow.png"
+                    class="absolute left-[-5%] w-[20vw] top-5 object-contain"
+                    alt="Arrow icon"
+                  />
+                </div>
               </div>
             </h1>
           </div>
-          <div class="imageContainer">
+          <div class="imageContainer w-full">
             <img
               src="secImg.png"
               class="object-cover w-full h-full"
@@ -79,13 +111,19 @@
         </div>
       </div>
     </div>
-    <section
-      class="section-two w-full h-[55vh] flex flex-col justify-center items-center"
-    >
-      <h2 class="text-2xl font-bold mb-3 mt-6">لماذا ذهين؟</h2>
-      <div class="contentTwo w-full sm:w-full md:w-full lg:w-full mt-5 py-10">
-        <img class="w-full object-cover mb-3" src="b.png" alt="" />
-      </div>
-    </section>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const menuClose = document.getElementById("menuClose");
+      const offcanvasMenu = document.getElementById("offcanvasMenu");
+
+      menuToggle.addEventListener("click", () => {
+        offcanvasMenu.classList.remove("translate-x-full");
+      });
+
+      menuClose.addEventListener("click", () => {
+        offcanvasMenu.classList.add("translate-x-full");
+      });
+    </script>
   </body>
 </html>
