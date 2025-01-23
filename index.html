@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ذهين: وجهتك لتحقيق أهدافك الجامعية ." />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ذهين</title>
+  </head>
+  <body>
+    <div class="main w-full min-h-[100vh]">
+      <div class="flex flex-col items-center w-full h-full">
+        <nav
+          class="flex justify-between p-3 items-center bg-white rounded-b-3xl w-[95%]"
+        >
+          <img src="logo.png" class="w-[50px]" alt="Logo" />
+          <ul class="flex gap-x-4">
+            <li><a href="#" class="text-mainColor">الرئيسيه</a></li>
+            <li><a href="#">الباقات</a></li>
+            <li><a href="#">المواد</a></li>
+            <li><a href="#">الأسئله الشائعه</a></li>
+            <li><a href="#">من نحن</a></li>
+          </ul>
+          <div class="icons flex gap-x-3 items-center">
+            <button class="bg-mainColor rounded-md py-1 px-4 text-white">
+              انضم كمعلم
+            </button>
+            <i class="fa-regular fa-user px-1"></i>
+            <i class="fa-solid fa-cart-shopping px-1"></i>
+            <i class="fa-solid fa-magnifying-glass px-1"></i>
+          </div>
+        </nav>
+
+        <div
+          class="mainContent w-[95%] h-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-center"
+        >
+          <div class="content flex flex-col p-3">
+            <h1 class="text-[5vw] font-bold">ذهين</h1>
+            <img class="w-[120px]" src="line-2.png" alt="Decorative line" />
+            <h1 class="font-bold leading-normal text-[5vw]">
+              وجهتك لتحقيق
+              <div class="relative">
+                <img
+                  src="teacher.png"
+                  class="absolute right-[70%] hidden lg:block object-cover"
+                  alt="Teacher icon"
+                />
+                <img
+                  src="arrow.png"
+                  class="absolute right-[42%] hidden lg:block object-cover"
+                  alt="Arrow icon"
+                />
+                <h1 class="inline-block text-[5vw] font-bold">
+                  أهدافك <span class="text-mainColor font-bold">الجامعية</span>
+                </h1>
+                <p class="text-[#8C8C8C] text-[1.3vw]">
+                  خطوه واحده تفصلك عن التفوق
+                </p>
+                <button
+                  class="bg-mainColor text-white py-2 px-14 rounded-md self-start text-base"
+                >
+                  ابدأ رحلتك الأن
+                </button>
+              </div>
+            </h1>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="secImg.png"
+              class="object-cover w-full h-full"
+              alt="Secondary illustration"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <section
+      class="section-two w-full h-[55vh] flex flex-col justify-center items-center"
+    >
+      <h2 class="text-2xl font-bold mb-3 mt-6">لماذا ذهين؟</h2>
+      <div class="contentTwo w-full sm:w-full md:w-full lg:w-full mt-5 py-10">
+        <img class="w-full object-cover mb-3" src="b.png" alt="" />
+      </div>
+    </section>
+  </body>
+</html>
